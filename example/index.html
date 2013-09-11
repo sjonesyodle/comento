@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ComentO</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../comento.js"></script>
+<script src="marked.js"></script>
+</head>
+
+<body>
+	<div id="wrapper"></div>
+<script>
+
+(function(){
+	$.get("example.md", function(d){
+
+		// Log the comment in test.md to the console
+		console.log( comento(d) );
+
+		// Pars the Mardown file to the doument
+		$("#wrapper").html( marked(d) );
+	});
+}());
+
+</script>
+</body>
+</html>
